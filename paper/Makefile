@@ -5,7 +5,7 @@ paper.pdf: paper.tex _content.tex paper.bib
 	pdflatex -shell-escape paper.tex
 	pdflatex -shell-escape paper.tex
 
-force:
+force: _content.tex
 	pdflatex -shell-escape paper.tex
 	bibtex paper
 	pdflatex -shell-escape paper.tex
@@ -19,3 +19,7 @@ clean:
 	rm -f paper.aux paper.bbl paper.blg paper.log paper.out paper.pdf
 	rm -f _content.tex content.tex todo.tex
 	rm -rf _minted-paper/
+
+update-compiled-paper.pdf:
+	make force
+	cp paper.pdf ../compiled-paper.pdf

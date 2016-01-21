@@ -10,5 +10,8 @@ Requirements: A recent Emacs (tested on Emacs 24.5), Python, make, pdflatex.
 - change into the ``paper`` subdirectory
 - call ``make``
 
+## What does the final ``paper.pdf`` look like?
+
+We have committed this file for convenience to the repository, and it can be seen [here](compiled-paper.pdf).
 
 Author: Hans Fangohr, University of Southampton
