@@ -4,4 +4,11 @@ A set of (mostly) self-explaining files for using orgmode to author structure an
 
 Requirements: A recent Emacs (tested on Emacs 24.5), Python, make, pdflatex.
 
+## Get started
+
+- clone this repository
+- change into the ``paper`` subdirectory
+- call ``make``
+
+
 Author: Hans Fangohr, University of Southampton
