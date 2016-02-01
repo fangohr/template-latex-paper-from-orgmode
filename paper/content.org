@@ -35,6 +35,8 @@ We can use equations as if the orgmode source was \LaTeX{}, for example $f(x) = 
 \int f(x) \d x = C
 \end{equation}
 
+
+
 ** COMMENT
 
 Note also the comment feature: sections that have titles starting with COMMENT are not included in the output, and can be used to record thoughts or drafts not to be shown in the LaTeX document.
@@ -67,13 +69,35 @@ We can also provide guidance to orgmode how we would like the figure included (s
 #+ATTR_LATEX: :width 2cm :options angle=90
 file:figures/icon.png
 
-However, often it seems more efficient to inculde the full float figure environment as raw latex into the orgmode file. Here is an example for such a figure, and then we can refer to it through its figure number \ref{fig:myfigure}.
+If you prefer, you can inculde the full float figure environment as
+raw latex into the orgmode file. Here is an example for such a figure,
+and then we can refer to it through its figure number
+\ref{fig:myfigure}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\columnwidth]{figures/icon.png}
-\caption{The fuzzy skyline in big\label{fig:myfigure}}
+\includegraphics[width=0.1\columnwidth]{figures/icon.png}
+\caption{The skyline\label{fig:myfigure}}
 \end{figure}
+
+** Figure and Table environments
+
+The ~+CAPTION~ directive instructions orgmode to create a caption, and wrap up the following graphic or table into  a Table or Figure environment.
+
+#+CAPTION: This is the caption for the next table (or link)
+#+NAME:   tab:basic-data
+| Apples  | 1 |
+| Bananas | 3 |
+|---------+---|
+| Fruit   | 4 |
+
+#+CAPTION[Short form]: This is the caption for the next Figure
+#+NAME:   fig:example
+#+ATTR_LATEX: :width 2cm :options angle=90
+file:figures/icon.png
+
+We have just created figure \ref{fig:example}.
+
 
 ** Code
 
