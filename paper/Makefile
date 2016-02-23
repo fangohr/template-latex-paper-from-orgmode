@@ -1,19 +1,26 @@
 
-paper.pdf: paper.tex _content.tex paper.bib
+paper.pdf: paper.tex content.tex paper.bib
 	pdflatex -shell-escape paper.tex
 	bibtex paper
 	pdflatex -shell-escape paper.tex
 	pdflatex -shell-escape paper.tex
 
-force: _content.tex
+force: content.tex
 	pdflatex -shell-escape paper.tex
 	bibtex paper
 	pdflatex -shell-escape paper.tex
 	pdflatex -shell-escape paper.tex
 
-_content.tex: content.org extract_body.py code/*
+
+content.tex: content.org extract_body.py code/*
+# Export file to LaTeX
 	emacs --script ./org-files-to-tex.el
-	python extract_body.py content.tex _content.tex
+# Rename so that filename starts with underscore
+	mv content.tex _content.tex
+# Extract body and save result to the original filename
+	python extract_body.py _content.tex content.tex
+# Remove temporary file
+	rm _content.tex
 
 clean:
 	rm -f paper.aux paper.bbl paper.blg paper.log paper.out paper.pdf
