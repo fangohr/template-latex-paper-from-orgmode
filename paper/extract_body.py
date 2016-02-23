@@ -2,13 +2,19 @@
 import sys
 
 
-def extract_body(s):
-    # chop off beginning (here getting rid of \tableofcontents}
+def chop_off_header(s):
     assert s.count(r'\tableofcontents') == 1
-    s = s.split(r'\tableofcontents')[1]
-    # chop off very end
+    return s.split(r'\tableofcontents')[1]
+
+
+def chop_off_footer(s):
     assert s.count('\end{document}') == 1
-    s = s.split('\end{document}')[0]
+    return s.split('\end{document}')[0]
+
+
+def extract_body(s):
+    s = chop_off_header(s)
+    s = chop_off_footer(s)
     return s
 
 
