@@ -14,7 +14,7 @@ force: content.tex
 
 content.tex: content.org extract_body.py code/*
 # Export file to LaTeX
-	emacs --script ./org-files-to-tex.el
+	emacs --script ./org-files-to-tex.el *.org
 # Rename so that filename starts with underscore
 	mv content.tex _content.tex
 # Extract body and save result to the original filename
