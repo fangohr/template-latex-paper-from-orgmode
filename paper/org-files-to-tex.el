@@ -9,12 +9,12 @@
 (require 'ox-latex)
 
 ;; Define an interactive function for easy testing
-(defun org-beamer-export-to-pdf-directory (dirname)
+(defun org-beamer-export-to-pdf-directory (files)
   "Export all org files in directory `dirname' to pdf"
   (interactive "DExport org files to pdf in directory:")
   (save-excursion
     (let ((org-files-lst ))
-      (dolist (org-file (directory-files dirname nil "\.org$"))
+      (dolist (org-file files)
 	(message "*** Exporting file %s ***" org-file)
 	(find-file org-file)
 	(org-latex-export-to-latex)
@@ -50,5 +50,5 @@
 ;; Use utf8x for LaTeX export to access more unicode characters
 (setq org-latex-inputenc-alist '(("utf8" . "utf8x")))
 
-;; Export all org files
-(org-beamer-export-to-pdf-directory ".")
+;; Export all org files given on the command line
+(org-beamer-export-to-pdf-directory argv)
