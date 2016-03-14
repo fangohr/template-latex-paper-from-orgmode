@@ -10,8 +10,8 @@
 
 ;; Define an interactive function for easy testing
 (defun org-beamer-export-to-pdf-directory (files)
-  "Export all org files in directory `dirname' to pdf"
-  (interactive "DExport org files to pdf in directory:")
+  "Export all files to latex"
+  (interactive "Export org files to tex")
   (save-excursion
     (let ((org-files-lst ))
       (dolist (org-file files)
