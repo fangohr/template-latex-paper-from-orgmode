@@ -35,7 +35,10 @@ We can use equations as if the orgmode source was \LaTeX{}, for example $f(x) = 
 \int f(x) \d x = C
 \end{equation}
 
+** Italics, bold, underline
 
+Text can be emphasised using /italics/, *bold* or _underline_.
+In org-mode these are written as ~/italics/~, ~*bold*~ and ~_underline_~.
 
 ** COMMENT
 
