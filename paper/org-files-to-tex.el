@@ -47,6 +47,23 @@
 ;;	     'org-latex-filter-fancyvrb)
 
 
+;; the next section allows to add :ignoreheading: to section headers,
+;; and the heading will be removed in the latex output, but the section
+;; itself be included.
+;;
+;; This is useful to 'label' paragraphs or sections to draft a document
+;; while not wanting to reveal that label/title in the final version to the
+;; reader.
+(defun sa-ignore-headline (contents backend info)
+  "Ignore headlines with tag `ignoreheading'."
+  (when (and (org-export-derived-backend-p backend 'latex 'html 'ascii)
+             (string-match "\\(\\`.*\\)ignoreheading\\(.*\n\\)"
+                           (downcase contents)))
+                                        ;(replace-match "\\1\\2" nil nil contents)  ;; remove only the tag ":ignoreheading:" but keep the rest of the headline
+    (replace-match "" nil nil contents)        ;; remove entire headline
+    ))
+(add-to-list 'org-export-filter-headline-functions 'sa-ignore-headline)
+
 ;; Use utf8x for LaTeX export to access more unicode characters
 (setq org-latex-inputenc-alist '(("utf8" . "utf8x")))
 
