@@ -24,9 +24,21 @@ into the main document.
 
 There is a Makefile that automises all of these steps. It may be useful to run a pdf viewer that watches and automatically updates ~paper.pdf~ on any change, and to have a loop (or the ~watch~ command that repeatedly calls ~make~, so that the pdf is re-created when the modified ~content.org~ file is saved).
 
-** Subsection 1
+** Subsections
 
 Our document may well contain subsections. In fact, part of the joy of orgmode is that we can re-arrange sections and change their depth quite easily.
+
+** Mention how to ignore a heading              :ignoreheading:
+
+Using the ~:ignoreheading:~ tag, we can use section headings which do
+not appear in the final document.
+
+** Say why this is useful                       :ignoreheading:
+
+This is useful to 'label' paragraphs or sections to draft a document
+while not wanting to reveal that label/title in the final version to the
+reader.
+
 
 ** Details
 
