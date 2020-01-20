@@ -1,9 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && apt-get install -y python3 python3-pip \
-  emacs26 texlive-xetex
+  emacs texlive-xetex
 
 RUN pip3 install pygments
 
