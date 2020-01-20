@@ -131,9 +131,9 @@ Figure \ref{fig:code-example1} shows some code.
 
 #+LATEX: If necessary, we can use the \verb|#+LATEX:| directive, to send a string directly to LaTeX, i.e. unmodified by orgmode.
 
-#+BEGIN_LATEX
+#+BEGIN_EXPORT latex
 We can also create a literal \LaTeX{} block like this one.\footnote{See \href{http://orgmode.org/manual/Quoting-LaTeX-code.html}{http://orgmode.org/manual/Quoting-LaTeX-code.html} for more details}.
-#+END_LATEX
+#+END_EXPORT
 
 ** More results
 
