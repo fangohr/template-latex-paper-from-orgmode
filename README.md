@@ -17,3 +17,7 @@ Requirements: A recent Emacs (tested on Emacs 24.5), Python, make, pdflatex.
 We have committed this file for convenience to the repository, and it can be seen [here](compiled-paper.pdf).
 
 Author: Hans Fangohr, University of Southampton, European XFEL
+
+## Update 2018
+
+Note the contribution that shows a one-file solution for this problem at https://github.com/fangohr/template-latex-paper-from-orgmode/issues/4 by @dineshadepu .
