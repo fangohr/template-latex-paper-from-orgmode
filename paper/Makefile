@@ -1,9 +1,10 @@
 
 paper.pdf: paper.tex content.tex paper.bib
-	pdflatex -shell-escape paper.tex
-	bibtex paper
-	pdflatex -shell-escape paper.tex
-	pdflatex -shell-escape paper.tex
+	latexmk --pdflatex -shell-escape paper.tex
+	# pdflatex -shell-escape paper.tex
+	# bibtex paper
+	# pdflatex -shell-escape paper.tex
+	# pdflatex -shell-escape paper.tex
 
 force: content.tex
 	pdflatex -shell-escape paper.tex
@@ -13,13 +14,14 @@ force: content.tex
 
 
 content.tex: content.org extract_body.py code/*
-# Export file to LaTeX
+	@# Note: this target is used by latexmk (see latexmkrc)
+	# Export file to LaTeX
 	emacs --script ./org-files-to-tex.el *.org
-# Rename so that filename starts with underscore
+	# Rename so that filename starts with underscore
 	mv content.tex _content.tex
-# Extract body and save result to the original filename
+	# Extract body and save result to the original filename
 	python extract_body.py _content.tex content.tex
-# Remove temporary file
+	# Remove temporary file
 	rm _content.tex
 
 clean:
@@ -30,3 +32,11 @@ clean:
 update-compiled-paper.pdf:
 	make force
 	cp paper.pdf ../compiled-paper.pdf
+
+watch:
+	@# use this to re-run automatically if slides.tex or slides.org change
+	@# note the latexmkrc file to define the dependency on org files
+	latexmk --pdflatex -shell-escape -pvc -view=none paper.tex
+
+view:
+	open -a skim paper.pdf

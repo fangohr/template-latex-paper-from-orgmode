@@ -1,0 +1,6 @@
+add_cus_dep('org', 'tex', 0, 'orgmode2latex');
+sub orgmode2latex {
+    system("make content.tex");
+}
+
+# inspiration from https://www.semipol.de/posts/2018/06/latex-best-practices-lessons-learned-from-writing-a-phd-thesis/
