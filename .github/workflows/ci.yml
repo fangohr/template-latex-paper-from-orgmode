@@ -4,7 +4,13 @@
 
 name: Build latex document from orgmode
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
 jobs:
   Build
     runs-on: ubuntu-latest
