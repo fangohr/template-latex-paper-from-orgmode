@@ -1,8 +1,4 @@
-
-
-
-
-name: Build latex document from orgmode
+name: ci-build-pdf
 
 on:
   push:
@@ -12,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Build
+  build-pdf:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
