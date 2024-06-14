@@ -15,7 +15,7 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: echo "The user is $USER"
-      - run: echo "Ubuntu is `cat /etc/issue`"
+      - run: cat /etc/issue
       - run: echo "🖥️ Install dependencies"
       - run: sudo apt-get update -y && sudo apt-get install -y python3 python3-pip emacs texlive-xetex latexmk
       - run: pip3 install --user pygments
@@ -30,7 +30,6 @@ jobs:
       - run: echo "Build document"
       - run: cd paper
       - run: pwd
-      - run: which latexmk
       - run: make paper.pdf
       - name: Archive paper.pdf
         uses: actions/upload-artifact@v3
@@ -41,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: content.tex
-          path: paper/content.pdf
+          path: paper/content.tex
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
        
