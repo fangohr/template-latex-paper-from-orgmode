@@ -1,10 +1,6 @@
 
 paper.pdf: paper.tex content.tex paper.bib
 	latexmk --pdflatex -shell-escape paper.tex
-	# pdflatex -shell-escape paper.tex
-	# bibtex paper
-	# pdflatex -shell-escape paper.tex
-	# pdflatex -shell-escape paper.tex
 
 force: content.tex
 	pdflatex -shell-escape paper.tex
@@ -34,9 +30,10 @@ update-compiled-paper.pdf:
 	cp paper.pdf ../compiled-paper.pdf
 
 watch:
-	@# use this to re-run automatically if slides.tex or slides.org change
-	@# note the latexmkrc file to define the dependency on org files
+	@# use this to re-run automatically if sources.
+	@# note the latexmkrc file to define the dependency on org files.
 	latexmk --pdflatex -shell-escape -pvc -view=none paper.tex
 
+# skim is pdf viewer that updates automatically when the pdf file changes
 view:
 	open -a skim paper.pdf
