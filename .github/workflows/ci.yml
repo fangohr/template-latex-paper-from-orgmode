@@ -16,8 +16,8 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: echo "The user is $USER"
       - run: echo "🖥️ Install dependencies"
-      - run: sudo apt-get update -y && apt-get install -y python3 python3-pip emacs texlive-xetex
-      - run: pip3 install pygments
+      - run: sudo apt-get update -y && sudo apt-get install -y python3 python3-pip emacs texlive-xetex
+      - run: pip3 install --user pygments
 
       - name: Check out repository code
         uses: actions/checkout@v4
