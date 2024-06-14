@@ -32,10 +32,16 @@ jobs:
       - run: pwd
       - run: which latexmk
       - run: make paper.pdf
-      - name: Archive compilation result 
+      - name: Archive paper.pdf
         uses: actions/upload-artifact@v3
         with:
-          name: compiled-pdf
+          name: paper.pdf
           path: paper/paper.pdf
+      - name: Archive content.tex
+        uses: actions/upload-artifact@v3
+        with:
+          name: content.tex
+          path: paper/content.pdf
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
        
