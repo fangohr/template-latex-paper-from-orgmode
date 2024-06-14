@@ -14,8 +14,9 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "The user is $USER"
       - run: echo "🖥️ Install dependencies"
-      - run: apt-get update -y && apt-get install -y python3 python3-pip emacs texlive-xetex
+      - run: sudo apt-get update -y && apt-get install -y python3 python3-pip emacs texlive-xetex
       - run: pip3 install pygments
 
       - name: Check out repository code
