@@ -27,6 +27,6 @@ jobs:
       - run: echo "Build Docker image"
       - run: make docker-build
       - run: echo "Build paper.pdf in Docker container"
-      - run: make docker-test
+      - run: make docker-paper.pdf
       - run: echo "🍏 This job's status is ${{ job.status }}."
        
