@@ -1,4 +1,4 @@
-[![ci-build-pdf](https://github.com/fangohr/template-latex-paper-from-orgmode/actions/workflows/ci.yml/badge.svg)](https://github.com/fangohr/template-latex-paper-from-orgmode/actions/workflows/ci.yml)
+[![ci-build-pdf](https://github.com/fangohr/template-latex-paper-from-orgmode/actions/workflows/ci.yml/badge.svg)](https://github.com/fangohr/template-latex-paper-from-orgmode/actions/workflows/ci.yml) [![ci-in-docker](https://github.com/fangohr/template-latex-paper-from-orgmode/actions/workflows/docker.yml/badge.svg)](https://github.com/fangohr/template-latex-paper-from-orgmode/actions/workflows/docker.yml) 
 
 # Template for writing LaTeX documents from Emacs orgmode
 
@@ -16,7 +16,7 @@ Requirements: A recent Emacs (tested on Emacs 24.5, and 28.2), Python, make, pdf
 
 We have committed this file for convenience to the repository, and it can be seen [here](compiled-paper.pdf), or downloaded as an artifact.
 
-Author: Hans Fangohr, University of Southampton, European XFEL, MPSD
+Author: Hans Fangohr, University of Southampton, European XFEL, Max Planck Institute for the Structure and Dynamics of Matter
 
 ## Changes
 

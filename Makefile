@@ -3,8 +3,8 @@ PYTHON?=python3
 docker-build:
 		docker build -t orgmode2paper -f docker/Dockerfile .
 
-docker-test:
-		docker run -v `pwd`:/io orgmode2paper make force
+docker-paper.pdf:
+		docker run -v `pwd`:/io orgmode2paper make paper.pdf
 
 docker-bash:
 		docker run -ti -v `pwd`:/io orgmode2paper bash
